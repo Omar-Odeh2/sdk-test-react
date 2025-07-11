@@ -4,8 +4,8 @@ import { ReactNode, useEffect } from "react";
 export default function MainLayout({ children }: { children: ReactNode }) {
   function runRecoveryScript() {
     (window as any).churnSolution?.checkFailedPayment(
-      "35825cf33f4f913e4b905657425399793dbde5fb247d7ad454897118ebef2c8f",
-      "sub_1Rg6l3GKID6HxEjkQDiNcauk",
+      "1142e6676c5d4337d6b3be9b248f61615379313fd1e2023f8871b531f2525116",
+      "sub_1RjmcFGKID6HxEjkAicMNUmR",
       "ak_9bb38d6a23acc14b",
       {
         record: true, // enable recording flag, is true by default
@@ -41,7 +41,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div id="main-layout" className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen">
       <header className="w-full p-6 border-b border-white">
         <nav className="flex items-center gap-9">
           {pages.map(({ label, path }, index) => (
@@ -51,7 +51,9 @@ export default function MainLayout({ children }: { children: ReactNode }) {
           ))}
         </nav>
       </header>
-      {children}
+      <div id="main-layout" className="flex flex-col">
+        {children}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 node_modules
+churnsolution-sdk
 
 /.cache
 /build
